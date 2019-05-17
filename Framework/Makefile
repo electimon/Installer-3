@@ -1,6 +1,5 @@
-TESTHOST = iphone.local
 HEAVENLY = /usr/local/share/iphone-filesystem
-CC = arm-apple-darwin-gcc
+CC = arm-apple-darwin-gcc -w
 CFLAGS = -x objective-c -mmacosx-version-min=10.4 -dynamiclib -O3
 LD = arm-apple-darwin-ld
 LDFLAGS = -ObjC -syslibroot $(HEAVENLY) \
@@ -56,8 +55,3 @@ bundle:			AppTapp
 			mkdir -p AppTapp.framework
 			cp AppTapp AppTapp.framework/AppTapp
 			cp Info.plist AppTapp.framework/Info.plist
-
-
-test:			all
-			scp -r AppTapp.framework root@$(TESTHOST):/Applications/Installer.app/
-

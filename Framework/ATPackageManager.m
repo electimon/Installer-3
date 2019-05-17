@@ -509,8 +509,8 @@ static ATPackageManager * sharedInstance = nil;
 	
 	sourcesRefreshed = 0;
 
-	NSEnumerator		*	allSources = [packageSources reverseObjectEnumerator];
-	NSDictionary	*	source;
+	NSEnumerator	*allSources = [packageSources reverseObjectEnumerator];
+	NSDictionary	*source;
 	
 	// Create a chain of source fetchers
 	if (sourceRefreshQueue)

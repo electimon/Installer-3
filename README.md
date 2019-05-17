@@ -12,30 +12,32 @@ Installer source code, AppTapp Framework source, and Translation strings.
 
 ### Building
 
-Installer 3 is known to build on Linux and Mac OS X with the iPhone Dev Toolchain. It's easiest to install the toolchain with http://whitera1n.com/lti.
+Installer 3 is known to build on Linux and Mac OS X with the iPhone Dev Toolchain.
 
-Once the toolchain is installed you can simply cd into the "Installer" directory and "make".
+Once the toolchain is installed you can simply "make".
 
 ### Installing
 
 
 On the iPhone OS 1 device, it is recommended you have binutils for ios installed to run these commands over ssh or in a Terminal app.
 
-Automatic testing can be used if you edit the TESTHOST in the MakeFile to your IP. Then cd into the "Installer" directory and "make test"
+Automatic testing can be used if you pass the IP variable to make deploy
 
 Manual testing/installation can be done with these instructions:
 
-Copy Installer.app to /Applications/Installer.app.
+Copy Product/Installer.app to /Applications/Installer.app.
 
 chown -R root:wheel /Applications/Installer.app
 
 chmod 4755 /Applications/Installer.app/Installer
 
+chmod 4755 /Applications/Installer.app/AppTapp.framework/AppTapp
+
 killall -9 SpringBoard
 
 ### Debugging 
 
-A neat trick you can do is run executables on the iPhone or iPod Touch like you can on Mac OS X. Over SSH execute /Applications/Installer.app/Installer (if your root you don't even need to set those pesky permissions). Installer.app will open and you can see all the output as it runs.
+A neat trick you can do is run executables on the iPhone or iPod Touch like you can on Mac OS X. Over SSH execute /Applications/Installer.app/Installer, Installer.app will open and you can see all the output as it runs.
 
 ### Credit
 
