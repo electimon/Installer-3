@@ -55,6 +55,8 @@ deploy:			all
 			ssh root@${IP} chown -R root:wheel /Applications/Installer.app; chmod 4755 /Applications/Installer.app/Installer; chmod 4755 /Applications/Installer.app/AppTapp.framework/AppTapp; killall -9 SpringBoard
 
 test:
+			@echo *Cleaning*
+			make clean
 			@echo *Testing Multi-Jobs build*
 			@make -j2 || (echo *Multi-Jobs build failed!*; make clean; exit 1)
 			@echo *Success*
